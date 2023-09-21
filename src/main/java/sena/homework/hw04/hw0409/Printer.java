@@ -5,7 +5,7 @@ package sena.homework.hw04.hw0409;
  */
 public class Printer {
 
-    private ConsoleColors colour;
+    private final ConsoleColors colour;
 
     public Printer(ConsoleColors colour) {
         this.colour = colour;

@@ -14,20 +14,19 @@ HW - 04 - 09
  */
 public class Main {
 
-    private final Printer[] printers = new Printer[3];
-
     public static void main(String[] args) {
 
-        Printer[] printers1 = {new RedPrinter(), new GreenPrinter(), new BluePrinter()};
-        for (int i = 0; i < printers1.length; i++) {
-            if(printers1[i] instanceof GreenPrinter) {
-                printers1[i].print("Зелений рядок");
+        Printer[] printers = {new RedPrinter(), new GreenPrinter(), new BluePrinter()};
+        for (Printer printer :printers) {
+
+            if(printer instanceof GreenPrinter) {
+                printer.print("Зелений рядок");
             }
-            if(printers1[i] instanceof RedPrinter) {
-                printers1[i].print("Червоний рядок");
+            if(printer instanceof RedPrinter) {
+                printer.print("Червоний рядок");
             }
-            if(printers1[i] instanceof BluePrinter) {
-                printers1[i].print("Блакитний рядок");
+            if(printer instanceof BluePrinter) {
+                printer.print("Блакитний рядок");
             }
         }
     }
