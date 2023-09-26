@@ -9,6 +9,7 @@ HW - 04 - 09
 використовуйте приведення типів (Upcast / Downcast Explicitly).
 
  */
+
 /**
  * @author Sergej Chumakov on 21.09.2023
  */
@@ -17,17 +18,13 @@ public class Main {
     public static void main(String[] args) {
 
         Printer[] printers = {new RedPrinter(), new GreenPrinter(), new BluePrinter()};
-        for (Printer printer :printers) {
 
-            if(printer instanceof GreenPrinter) {
-                printer.print("Зелений рядок");
-            }
-            if(printer instanceof RedPrinter) {
-                printer.print("Червоний рядок");
-            }
-            if(printer instanceof BluePrinter) {
-                printer.print("Блакитний рядок");
-            }
-        }
+        RedPrinter redPrinter = (RedPrinter) printers[0];
+        GreenPrinter greenPrinter = (GreenPrinter) printers[1];
+        BluePrinter bluePrinter = (BluePrinter) printers[2];
+
+        greenPrinter.print("Зелений рядок");
+        redPrinter.print("Червоний рядок");
+        bluePrinter.print("Блакитний рядок");
     }
 }
