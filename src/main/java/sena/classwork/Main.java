@@ -1,38 +1,22 @@
 package sena.classwork;
 
-import java.util.Arrays;
-
 /**
- * @author Sergej Chumakov on 23.09.2023
+ * @author Sergej Chumakov on 30.09.2023
  */
 public class Main {
 
     public static void main(String[] args) {
 
-        int[][] array1 = {{1,2,3},{4,5,6},{7,8,9}};
+        Cactus myCactus1 = new Cactus(10, "some type", "no leaves");
+        Rose myRose1 = new Rose(9, "some rose", "green");
+        Cactus myCactus2 = new Cactus(10, "some type", "no leaves", "sand", "30.00", "yellow", new Gorshok(10,10));
+        Rose myRose2 = new Rose(9, "some rose", "green", "water sand", "30.00", "yellow", new Gorshok(10,10));
 
-        int[][] res = rev90(array1);
-
-        for (int i = 0; i < array1.length; i++) {
-            System.out.println(Arrays.toString(array1[i]));
-        }
-        System.out.println();
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(Arrays.toString(res[i]));
-        }
+        System.out.println("myCactus1= " + myCactus1);
+        System.out.println("myRose1= " + myRose1);
+        System.out.println("myCactus2= " + myCactus2);
+        System.out.println("myRose2= " + myRose2);
     }
 
-    private static int[][] rev90(int[][] array1) {
 
-        int length = array1.length;
-
-        int[][] res = new int[array1.length][array1[0].length];
-
-        for (int i = 0; i < array1.length; i++) {
-            for (int j = 0; j < array1[i].length; j++) {
-                res[length - 1 - j][i] = array1[i][j];
-            }
-        }
-        return res;
-    }
 }
