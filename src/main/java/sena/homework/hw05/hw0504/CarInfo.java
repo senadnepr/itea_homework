@@ -46,8 +46,4 @@ public class CarInfo {
         }
         return maxPowerCar;
     }
-
-    public SomeCar[] getCarsArray() {
-        return carsArray;
-    }
 }

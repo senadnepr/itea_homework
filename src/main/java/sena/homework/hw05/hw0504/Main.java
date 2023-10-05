@@ -8,10 +8,10 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        SomeCar ford = new SomeCar("Ford", 180, 250, 25000);
-        SomeCar mitsubishi = new SomeCar("Mitsubishi", 100, 150, 15000);
-        SomeCar toyota = new SomeCar("Toyota", 200, 220, 40000);
-        SomeCar kia = new SomeCar("KIA", 120, 180, 18000);
+        SomeCar ford = new Ford("mustang", 180, 250, 25000);
+        SomeCar mitsubishi = new Mitsubishi("Colt", 100, 150, 15000);
+        SomeCar toyota = new Toyota("Camry", 200, 220, 40000);
+        SomeCar kia = new KIA("Rio", 120, 180, 18000);
 
         CarInfo carInfo = new CarInfo();
         carInfo.addCar(ford);

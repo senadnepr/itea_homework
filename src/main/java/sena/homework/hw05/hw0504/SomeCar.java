@@ -3,7 +3,7 @@ package sena.homework.hw05.hw0504;
 /**
  * @author Sergej Chumakov on 04.10.2023
  */
-public class SomeCar {
+public abstract class SomeCar {
 
     private String model;
     private double power;                           // - від 0.0 до 200.0
@@ -51,7 +51,7 @@ public class SomeCar {
     //Brand: KIA Rio Power: 600 Speed: 189 Price: 3458.90 Year: 1967
     @Override
     public String toString() {
-        return "Brand: " + model +
+        return " " + model +
                 " Power: " + power +
                 " Speed: " + speed +
                 " Price: " + price +
