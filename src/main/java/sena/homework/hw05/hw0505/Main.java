@@ -8,24 +8,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Seria artDeko = new Seria(1,"Ар-деко",
-                new Chair(2340, "Тиха гавань"),
-                new Table(7340.57, "Мудрість віків"),
-                new Sofa(14020.57, "Місце роздумів"));
+        Fabrika factory1 = new Fabrika1();
+        Fabrika factory2 = new Fabrika2();
+        Fabrika factory3 = new Fabrika3();
 
-        Seria viktoria = new Seria(2,"Вікторіанській",
-                new Chair(2520, "Королівське"),
-                new Table(5730, "Шерлок"),
-                new Sofa(15450, "Гановер"));
+        Fabrika[] factories = {factory1, factory2, factory3};
 
-        Seria modern = new Seria(3,"Модерн",
-                new Chair(1340, "Стар шіп"),
-                new Table(5340.17, "Гіпер портал"),
-                new Sofa( 4340, "Пульт керування"));
-
-        Seria[] allSeries = {artDeko, viktoria, modern};
-
-        int res = 0;
+        int res;
         boolean isCorrect = false;
         do {
             System.out.println("Який варіант набору Ви хотіли б придбати ? " +
@@ -35,18 +24,18 @@ public class Main {
             if (res == 1 || res == 2 || res == 3) isCorrect = true;
         }while (!isCorrect);
 
-        System.out.println("Ви обрали варіант: " + getSeria(res, allSeries).toString());
+        System.out.println("Ви обрали варіант: " + getFabrika(res, factories).getReport());
 
         // додавання нової меблі
-        viktoria.addFurniture(new Shelf(2500, "Камінна поличка"));
+        factory2.addFurniture(new Shelf(2500, "Камінна поличка"));
         // дивимось, як вийшло
-        System.out.println("Ви обрали варіант: " + viktoria);
+        System.out.println("Ви обрали варіант: " + factory2.getReport());
     }
 
-    private static Seria getSeria(int res, Seria[] allSeries) {
-        for (int i = 0; i < allSeries.length; i++) {
-            if(res == allSeries[i].getNumber()) return allSeries[i];
+    private static Fabrika getFabrika(int res, Fabrika[] factories) {
+        for (int i = 0; i < factories.length; i++) {
+            if(res == factories[i].getNumber()) return factories[i];
         }
-        return new Seria(0, "Помилка вибору", new Furniture[0]); // на всяк випадок, хоча do...wile не допустить цього
+        return new EmptyFabrika();
     }
 }
