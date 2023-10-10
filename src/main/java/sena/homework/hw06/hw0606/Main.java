@@ -1,4 +1,4 @@
-package sena.homework.hw06.hw0604;
+package sena.homework.hw06.hw0606;
 
 /**
  * @author Sergej Chumakov on 10.10.2023
