@@ -1,7 +1,5 @@
 package sena.homework.hw05.hw0504;
 
-import java.util.Arrays;
-
 /**
  * @author Sergej Chumakov on 04.10.2023
  */

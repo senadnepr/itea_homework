@@ -5,8 +5,8 @@ package sena.homework.hw05.hw0505;
  */
 public class Furniture {
 
-    private double price;
-    private String name;
+    private final double price;
+    private final String name;
 
     public Furniture(double price, String name) {
         this.price = price;
