@@ -28,7 +28,7 @@ public enum Vehicles {
 
     @Override
     public String toString() {
-        return super.toString() +
+        return super.name() +
                 ", " + getColor() +
                 ", " + price;
     }
