@@ -80,6 +80,7 @@ public class ModernUnidirectionalLinkedList<T> {
             }
         } while (!flag);
         size--;
+        compressArray();
     }
 
     public void remove(T value) {
@@ -113,12 +114,14 @@ public class ModernUnidirectionalLinkedList<T> {
         }
         newSize = newSize * 2 + 1;
         Element<T>[] newArray = new Element[newSize];
-        int count = 0;
+        newArray[0] = null;
+        int count = 1;
         for (Element<T> element  :elementsArray) {
             if(element != null){
                 newArray[count] = element;
             }
         }
+        newArray[count + 1] = null;
         elementsArray = newArray;
     }
 
