@@ -1,16 +1,17 @@
 package sena.homework.hw09.hw0901;
 
 import java.io.*;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * @author Sergej Chumakov on 31.10.2023
+ *
+ * text.txt повинен бути у дерікторії resources, яку створює Maven
  */
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
         Set<String> pryimen = new HashSet<>(Arrays.asList(" в ", " із ", " на ", " до ", " від ", " у ", " з ", " за ", " над ",
                 " під ", " при ", " про ", " через ", " без ", " для ", " по ", " серед ", " попід" , " навколо ",
@@ -36,6 +37,10 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+        FileWriter fileWriter = new FileWriter(classLoader.getResource("text.txt").getPath(), false);
+        fileWriter.write(stringBuilder.toString());
+        fileWriter.flush();
+        fileWriter.close();
         System.out.println(stringBuilder);
     }
 }
