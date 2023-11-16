@@ -37,6 +37,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+        System.out.println("path=" + classLoader.getResource("text.txt").getPath());
         FileWriter fileWriter = new FileWriter(classLoader.getResource("text.txt").getPath(), false);
         fileWriter.write(stringBuilder.toString());
         fileWriter.flush();
