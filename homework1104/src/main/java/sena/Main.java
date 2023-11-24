@@ -1,5 +1,7 @@
 package sena;
 
+import java.util.Date;
+
 /**
  * @author Sergej Chumakov on 21.11.2023
  */
@@ -40,14 +42,21 @@ public class Main {
                 System.out.println("Завершення " + getName());
             }
         };
-
+        Date begin = new Date();
+        System.out.println("Begin");
         thread1.start();
         thread2.start();
         thread3.start();
 
         thread1.join();
-        thread2.join();
-        thread3.join();
+        System.out.println("thread1.joined");
+        System.out.println(new Date().getTime() - begin.getTime());
+        thread2.join(500);
+        System.out.println("thread2.joined");
+        System.out.println(new Date().getTime() - begin.getTime());
+        thread3.join(400);
+        System.out.println("thread3.joined");
+        System.out.println(new Date().getTime() - begin.getTime());
 
         System.out.println("MAIN DONE");
     }
