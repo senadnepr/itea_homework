@@ -18,7 +18,12 @@ public class Main {
         library.forEach(Book::print);
 
         Reading getBook = (x) -> x.setReading(true);
-        Reading returnBook = (x) -> x.setReading(false);
+        Reading returnBook = new Reading() {
+            @Override
+            public void getOrReturn(Book book) {
+                book.setReading(false);
+            }
+        };
 
         getBook.getOrReturn(library.get(0));
         returnBook.getOrReturn(library.get(1));
