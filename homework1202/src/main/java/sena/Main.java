@@ -16,5 +16,16 @@ public class Main {
         );
 
         library.forEach(Book::print);
+
+        Reading getBook = (x) -> x.setReading(true);
+        Reading returnBook = (x) -> x.setReading(false);
+
+        getBook.getOrReturn(library.get(0));
+        returnBook.getOrReturn(library.get(1));
+        getBook.getOrReturn(library.get(2));
+
+        System.out.println();
+
+        library.forEach(Book::print);
     }
 }

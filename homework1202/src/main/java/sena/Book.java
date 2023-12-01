@@ -7,11 +7,20 @@ public class Book {
     private String title;
     private String autor;
     private int year;
+    private boolean isReading;
 
     public Book(String title, String autor, int year) {
         this.title = title;
         this.autor = autor;
         this.year = year;
+    }
+
+    public boolean isReading() {
+        return isReading;
+    }
+
+    public void setReading(boolean reading) {
+        isReading = reading;
     }
 
     public String getTitle() {
@@ -44,6 +53,7 @@ public class Book {
                 "title='" + title + '\'' +
                 ", autor='" + autor + '\'' +
                 ", year=" + year +
+                ", isReading=" + isReading +
                 '}';
     }
 
