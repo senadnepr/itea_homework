@@ -12,6 +12,7 @@ public class Main {
         ClassLoader classLoader = Main.class.getClassLoader();
         String path = classLoader.getResource("test.txt").getPath();
         System.out.println("path=" + path);
+        System.out.println("test=" + path);
         File file = new File(path);
 
         ClassForSerialization classForSerialization = new ClassForSerialization();
