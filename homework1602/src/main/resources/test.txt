@@ -1,0 +1,6 @@
+USE MyJoinsDB;
+CREATE TABLE Employees (ID int NOT NULL PRIMARY KEY, FName nvarchar(15) NOT NULL, LName nvarchar(15) NOT NULL, MName nvarchar(15) NULL, Phone1 nvarchar(13) NOT NULL);
+INSERT Employees VALUES (1, 'Василь', 'Петрович', 'Лященко', '+380681234567');
+INSERT Employees VALUES (2, 'Іван', 'Іванович', 'Білецький', '+380731234567');
+INSERT Employees VALUES (3, 'Олександр', 'Сидорович', 'Петренко', '+380501234567');
+SELECT * FROM Employees;
